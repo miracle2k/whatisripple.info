@@ -1,0 +1,253 @@
+<html>
+<head>
+<title>How Ripple Works</title>
+<style>
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+</style>
+<style>
+    body {
+        margin: 2em;
+        font-size: 18pt;
+        line-height: 24pt;
+        font-weight: 100;
+        font-family: "brandon-grotesque", Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+    p {
+        margin: 1em 0;
+    }
+    h1 {
+        font-size: 200%;
+        font-weight: 200;
+        margin-bottom: 1.5em;
+    }
+    h2 {
+        font-size: 170%;
+        font-weight: 200;
+        margin-bottom: 1.2em;
+    }
+    body {
+        margin-left: 9em;
+        padding-left: 1em;
+        border-left: 1px dotted black;
+        max-width: 900px;
+    }
+    p, li {
+        font-family: "proxima-nova";
+        font-weight: 100;
+    }
+    ul li {
+        float: left;
+        width: 45%;
+        box-sizing: border-box;
+        margin-bottom: 1em;
+        margin-right: 4%;
+    }
+    ul li:nth-child(odd) {
+        clear: left;
+    }
+    ul li img {
+        margin: 10px 0px;
+        box-sizing: border-box;
+        width: 90%;
+        display: block;
+    }
+    ul {
+        overflow: auto;
+    }
+    strong {
+        text-decoration: underline;
+        -webkit-text-decoration-line: underline;
+        -moz-text-decoration-style: dotted;
+        -webkit-text-decoration-style: dotted;
+        text-decoration-style: dotted;
+    }
+    section {
+        margin-top: 65px;
+        overflow: auto;
+    }
+    section p {
+        overflow: auto;
+    }
+    section p:first-of-type {
+        margin-top: 0;
+    }
+    section img {
+        float: right;
+        max-width: 470px;
+        margin: 0 1em 1.5em 0.5em;
+    }
+</style>
+<script type="text/javascript" src="//use.typekit.net/nee5gey.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+</head>
+<body>
+
+<h1>How Ripple Works</h1>
+
+<p>
+First, let's consider how an internet payment works today.
+</p>
+
+<ul>
+    <li>
+        Here is Bob. Bob gives some money to PayPal. In exchange, PayPal gives him a
+        <strong>balance in their system</strong> over that amount.
+        <img src="old1.png">
+
+    <li>
+        Alice is also a PayPal customer. Bob wants to pay Alice. PayPal takes some money
+        from his balance and <strong>credits it to Alice's account</strong>.
+        <img src="old2.png">
+
+    <li>
+        Bob also wants to pay Carol. Carol is French. PayPal will <strong>take USD</strong> from Bob
+        and <strong>add EUR</strong> to Carol's account, applying <strong>PayPal's exchange rate</strong>.
+        <img src="old3.png">
+
+    <li>
+        Brent is a Google Wallet user; he <strong>cannot exchange money</strong> with Bob, Alice or Carol.
+        <img src="old4.png">
+</ul>
+
+<h2>Ripple</h2>
+
+<p>
+Ripple has a key distinction: it moves the balances to a decentralized network of computers, controlled not by any single institution, but by an open protocol - like the web.
+</p>
+<section>
+    <img src="ripple1.png">
+    <p>
+        Bob is now using Ripple. He choses a payment provider that operates on the Ripple network: Bitstamp.
+        Bob gives money to Bitstamp. In exchange, they give him a balance over that amount.
+    </p>
+    <p>
+        This time, his balance is <strong>stored on the Ripple network</strong>, decentralized and
+        cryptographically secured. The network ensures that balances are safe and can only be modified
+        by their owners. Even Bitstamp cannot access Bob's balance.
+    </p>
+</section>
+
+<section>
+    <img src="ripple2.png">
+    <p>
+        Bob can now sends money to Alice. Note that Alice <strong>never signed up with
+        Bitstamp</strong>, and has no business relationship them. She nevertheless can chose to receive
+        Bob's money, and the Ripple network will credit her with a Bitstamp balance. Bitstamp cannot
+        oppose this transaction; Bob and Alice may spend their balances as they wish.
+    </p>
+</section>
+
+
+<section>
+    <img src="ripple3.png">
+    <p>
+    There are many <strong>other payment providers</strong> on the Ripple network.</p>
+    <p>
+    Brent is a customer of Justcoin, and his Justcoin balance is
+    stored on the Ripple network alongside the Bitstamp balances of Alice
+    and Bob.
+    </p>
+    <p>
+    Brent also wants to buy from Alice. However, Alice <strong>does not accept</strong>
+    his Justcoin balance. She does not want to sign up with Justcoin to withdraw her money.
+    </p>
+</section>
+
+<section>
+    <img src="ripple4.png">
+    <p>
+    Bob does a lot of business with other Justcoin customers, and so he wouldn't mind a
+    Justcoin balance. Because Bob agreed to this, the network will automatically transfer some
+    of Bob's Bitstamp balance to Alice, in exchange for an equivalent Justcoin balance from Brent.
+    </p>
+    <p>Bob acted as an intermediary and <strong>facilitated a payment</strong> between Brent
+        and Alice, and two <strong>different payment providers</strong>. He can chose to charge
+        a small fee for this service.
+    </p>
+    <p>
+        Because customers from different providers constantly want to send money between each
+        other, there are many people like Bob on the network, and the market will keep the exchange
+        fee low.
+    </p>
+</section>
+
+<section>
+    <img src="ripple5.png">
+    <p>
+    Bob again needs to pay Carol in Euros. The network will convert his USD balance into a EUR balance
+    using the <strong>best exchange rate available</strong> on the market.
+    </p>
+    <p>
+    Bob could even pay with Bitcoin, his frequent flyer miles, or gift certificates. As long as
+    someone on the network is willing to accept his currency, he'll be able to have them exchanged,
+    automatically during the payment, for the Euros that Carol is asking for.
+    </p>
+</section>
+
+
+<h2>Links</h2>
+<ul>
+    <a href="http://ripple.com">ripple.com</a>
+</ul>
+
+<a href="https://github.com/you"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-47212364-1', 'whatisripple.com');
+  ga('send', 'pageview');
+
+</script>
+</body>
+<html>
