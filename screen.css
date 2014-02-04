@@ -98,7 +98,7 @@ ul li img {
     display: block;
 }
 ul {
-    overflow: auto;
+    overflow: hidden;
 }
 strong {
     text-decoration: underline;
